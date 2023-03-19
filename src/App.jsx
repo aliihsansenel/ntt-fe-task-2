@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import nttLogo from "./assets/ntt-logo.svg";
+import MenuList from "./components/general/MenuList";
 import SearchBar from "./components/general/SearchBar";
 import StackRow from "./components/layout/StackRow";
 
@@ -9,6 +10,9 @@ function App() {
             <StackRow>
                 <img height="24" src={nttLogo} alt="Ntt logo" />
                 <SearchBar />
+            </StackRow>
+            <StackRow>
+                <MenuList />
             </StackRow>
         </Box>
     );
