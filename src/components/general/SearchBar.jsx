@@ -1,6 +1,6 @@
 import { InputBase, MenuItem, Paper, Select } from "@mui/material";
 import React from "react";
-import SearchIcon from "./SearchIcon";
+import SearchButton from "./SearchButton";
 
 function SearchBar() {
     const [category, setCategory] = React.useState('Category 1');
@@ -45,7 +45,7 @@ function SearchBar() {
                 <MenuItem value={'Category 2'}>Category 2</MenuItem>
                 <MenuItem value={'Category 3'}>Category 3</MenuItem>
             </Select>
-            <SearchIcon />
+            <SearchButton />
         </Paper>
     );
 }

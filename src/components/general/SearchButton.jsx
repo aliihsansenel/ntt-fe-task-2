@@ -3,7 +3,7 @@ import React from "react";
 
 import searchIcon from "../../assets/search-icon.svg";
 
-function SearchIcon() {
+function SearchButton() {
     return (
         <Box
             className="search-icon"
@@ -22,4 +22,4 @@ function SearchIcon() {
     );
 }
 
-export default SearchIcon;
+export default SearchButton;

@@ -5,7 +5,7 @@ import nttLogo from "../../assets/ntt-logo.svg";
 import burgerIcon from "../../assets/burger-menu-icon.svg";
 import SearchBar from "./SearchBar";
 import StackRow from "../layout/StackRow";
-import SearchIcon from "./SearchIcon";
+import SearchButton from "./SearchButton";
 
 function Header() {
     const theme = useTheme();
@@ -83,7 +83,7 @@ function Header() {
                 </StackRow>
                 <div className="line-break" />
                 <SearchBar />
-                <SearchIcon />
+                <SearchButton />
             </StackRow>
         </Box>
     );
