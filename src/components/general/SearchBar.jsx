@@ -3,7 +3,7 @@ import React from "react";
 import SearchIcon from "./SearchIcon";
 
 function SearchBar() {
-    const [category, setCategory] = React.useState(0);
+    const [category, setCategory] = React.useState('Category 1');
 
     const handleChange = (event) => {
         setCategory(event.target.value);
@@ -23,10 +23,10 @@ function SearchBar() {
                 '& > *': {
                     height: 40,
                 },
-                '& .search-icon': {
+                '& .category-select, .search-icon': {
                     borderTopLeftRadius: 0,
                     borderBottomLeftRadius: 0,
-                }
+                },
             }}
         >
             <InputBase
@@ -35,14 +35,15 @@ function SearchBar() {
                 inputProps={{ "aria-label": "search website" }}
             />
             <Select
+            sx={{ width: 132, backgroundColor: '#F4F5F6', border: 'none' }}
                 className="category-select"
                 value={category}
                 onChange={handleChange}
                 renderValue={(value) => (value ? value : "Categories")}
             >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={'Category 1'}>Category 1</MenuItem>
+                <MenuItem value={'Category 2'}>Category 2</MenuItem>
+                <MenuItem value={'Category 3'}>Category 3</MenuItem>
             </Select>
             <SearchIcon />
         </Paper>

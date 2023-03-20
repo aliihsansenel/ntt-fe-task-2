@@ -12,9 +12,9 @@ function MainPage() {
             <StackRow>
                 <MenuList />
             </StackRow>
-            <StackRow>
+            {/* <StackRow>
                 <Carousel />
-            </StackRow>
+            </StackRow> */}
         </>
     );
 }
