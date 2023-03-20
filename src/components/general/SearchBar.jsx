@@ -3,7 +3,7 @@ import React from "react";
 import SearchButton from "./SearchButton";
 
 function SearchBar() {
-    const [category, setCategory] = React.useState('Category 1');
+    const [category, setCategory] = React.useState("Categories");
 
     const handleChange = (event) => {
         setCategory(event.target.value);
@@ -17,13 +17,13 @@ function SearchBar() {
                 display: "flex",
                 alignItems: "center",
                 height: 40,
-                maxWidth: '735px',
-                border: '1px solid #89919A',
-                borderRadius: '4px',
-                '& > *': {
+                maxWidth: "735px",
+                border: "1px solid #89919A",
+                borderRadius: "4px",
+                "& > *": {
                     height: 40,
                 },
-                '& .category-select, .search-icon': {
+                "& .category-select, .search-icon": {
                     borderTopLeftRadius: 0,
                     borderBottomLeftRadius: 0,
                 },
@@ -35,15 +35,20 @@ function SearchBar() {
                 inputProps={{ "aria-label": "search website" }}
             />
             <Select
-            sx={{ width: 132, backgroundColor: '#F4F5F6', border: 'none' }}
+                sx={{
+                    width: 132,
+                    backgroundColor:
+                        category === "Categories" ? "#F4F5F6" : "white",
+                }}
+                // TODO borderColor
                 className="category-select"
                 value={category}
                 onChange={handleChange}
                 renderValue={(value) => (value ? value : "Categories")}
             >
-                <MenuItem value={'Category 1'}>Category 1</MenuItem>
-                <MenuItem value={'Category 2'}>Category 2</MenuItem>
-                <MenuItem value={'Category 3'}>Category 3</MenuItem>
+                <MenuItem value={"Category 1"}>Category 1</MenuItem>
+                <MenuItem value={"Category 2"}>Category 2</MenuItem>
+                <MenuItem value={"Category 3"}>Category 3</MenuItem>
             </Select>
             <SearchButton />
         </Paper>
