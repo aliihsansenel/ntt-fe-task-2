@@ -1,9 +1,9 @@
 import { Stack } from "@mui/system";
 import React from "react";
 
-function StackRow({ children }) {
+function StackRow({ children, ...rest}) {
     return (
-        <Stack direction="row" justifyContent="flex-start" alignItems="center">
+        <Stack direction="row" justifyContent="flex-start" alignItems="center" {...rest}>
             {children}
         </Stack>
     );

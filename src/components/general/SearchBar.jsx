@@ -1,4 +1,4 @@
-import { InputBase, MenuItem, Paper, Select, styled } from "@mui/material";
+import { InputBase, MenuItem, Paper, Select } from "@mui/material";
 import React from "react";
 
 function SearchBar() {
@@ -22,7 +22,7 @@ function SearchBar() {
                 placeholder="Search Website"
                 inputProps={{ "aria-label": "search website" }}
             />
-            <StyledSelect
+            <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={category}
@@ -32,15 +32,9 @@ function SearchBar() {
                 <MenuItem value={10}>Ten</MenuItem>
                 <MenuItem value={20}>Twenty</MenuItem>
                 <MenuItem value={30}>Thirty</MenuItem>
-            </StyledSelect>
+            </Select>
         </Paper>
     );
 }
 
 export default SearchBar;
-
-const StyledSelect = styled(Select)`
-    & .muioutlinedinput-notchedoutline: {
-        display: none;
-    }
-`;
