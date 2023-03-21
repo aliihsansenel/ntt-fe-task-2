@@ -28,9 +28,6 @@ function Header() {
                 sx={{
                     flexWrap: "wrap",
                     columnGap: "13px",
-                    "& .search-bar": {
-                        flexGrow: 1,
-                    },
                     "& .line-break": {
                         width: "100%",
                         [theme.breakpoints.up("tablet")]: {
