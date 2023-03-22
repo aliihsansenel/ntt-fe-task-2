@@ -5,11 +5,11 @@ import { fetchProducts } from "./productActions";
 const productSlice = createSlice({
     name: 'product',
     initialState: {
-        products: []
+        items: []
     },
     extraReducers: {
         [fetchProducts.fulfilled]: (state, action) => {
-            state.products = action.payload;
+            state.items = action.payload;
         }
     }
 });
