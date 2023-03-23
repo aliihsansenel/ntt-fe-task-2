@@ -18,6 +18,7 @@ const ProductCardArea = () => {
 
     return (
         <div>
+            <p>Se</p>
             {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
             ))}
