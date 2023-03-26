@@ -8,7 +8,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
-import { height } from "@mui/system";
+
+import favIcon from "@assets/favorite-icon.svg";
 
 import "./style.scss";
 
@@ -40,9 +41,13 @@ function ProductCard({ product }) {
                         bgcolor={"white"}
                         sx={{ borderRadius: "50%" }}
                     >
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Kalp
+                        <CardActions sx={{p:'0'}}>
+                            <Button size="small" color="primary" sx={{ minWidth: '24px', width: '24px', height: '24px', p: '0'}}>
+                            <img
+                                src={favIcon}
+                                height={16}
+                                alt="Add to favorites"
+                                />
                             </Button>
                         </CardActions>
                     </Box>
