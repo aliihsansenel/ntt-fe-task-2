@@ -20,15 +20,21 @@ const ProductCardArea = () => {
     }
 
     const height = {
-        [breakpoints.only("mobile")]: "120px",
-        [breakpoints.only("tablet")]: "150px",
-        [breakpoints.only("desktop")]: "180px",
+        mobile: "375px",
+        tablet: "300px",
+        desktop: "380px",
+    };
+    
+    const minHeight = { 
+        mobile: "170px",
+        tablet: "111px",
+        desktop: "190px",
     };
 
     return (
         <Grid container spacing={2}>
             {products.map((product) => (
-                <Grid item mobile={12} tablet={3} key={product.id} height={height}>
+                <Grid item mobile={12} tablet={3} key={product.id} sx={{ height: height, '& .MuiCardMedia-root': { minHeight: minHeight } }}>
                     <ProductCard product={product} />
                 </Grid>
             ))}

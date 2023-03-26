@@ -30,7 +30,7 @@ function ProductCard({ product }) {
             <CardActionArea>
                 <Box position={"relative"}>
                     <CardMedia
-                        sx={{ height: 170, backgroundSize: "cover" }}
+                        sx={{ backgroundSize: "cover" }}
                         image={imageUrl}
                         title={name}
                     />
