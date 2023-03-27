@@ -1,11 +1,17 @@
 import { Stack } from "@mui/system";
-import React from "react";
+import { styled } from "@mui/system";
 
-function StackRow({ children, ...rest}) {
+const ModifiedStackRow = styled(Stack)({
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+});
+
+function StackRow({ children, ...rest }) {
     return (
-        <Stack direction="row" justifyContent="flex-start" alignItems="center" {...rest}>
+        <ModifiedStackRow className="stack-row" {...rest}>
             {children}
-        </Stack>
+        </ModifiedStackRow>
     );
 }
 

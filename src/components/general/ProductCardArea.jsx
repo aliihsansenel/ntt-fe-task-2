@@ -1,44 +1,67 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 
-import { fetchProducts } from "@features/product/productActions";
-import ProductCard from "./ProductCard";
-import { Grid, useTheme } from "@mui/material";
+import ProductCardGrid from "./ProductCardGrid";
+import { Box, Stack, Typography, Button, useTheme } from "@mui/material";
+
+import StackRow from "../layout/StackRow";
+import favIcon from "@assets/fav-black-icon.svg";
+import { styled } from "@mui/system";
 
 const ProductCardArea = () => {
-    const dispatch = useDispatch();
-    const products = useSelector((state) => state.product.items);
-
     const { breakpoints } = useTheme();
 
-    React.useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
-
-    if (products.length === 0) {
-        return <div>Loading...</div>;
-    }
-
-    const height = {
-        mobile: "375px",
-        tablet: "300px",
-        desktop: "380px",
-    };
-    
-    const minHeight = { 
-        mobile: "170px",
-        tablet: "111px",
-        desktop: "190px",
-    };
-
+    const StyledContainer = styled(Box)({
+        maxWidth: 1200,
+        [breakpoints.only("mobile")]: {
+            margin: "48px 16px 0",
+        },
+        [breakpoints.only("tablet")]: {
+            margin: "48px 32px 0",
+        },
+        [breakpoints.up("desktop")]: {
+            margin: "48px 120px 0",
+        },
+        "& .MuiTypography-h1": {
+            fontWeight: 500,
+            fontSize: "min(2em, calc(1em + 0.8vw))",
+        },
+        "& .MuiButton-contained": {
+            padding: "4px 8px",
+        },
+    });
     return (
-        <Grid container spacing={2}>
-            {products.map((product) => (
-                <Grid item mobile={12} tablet={3} key={product.id} sx={{ height: height, '& .MuiCardMedia-root': { minHeight: minHeight } }}>
-                    <ProductCard product={product} />
-                </Grid>
-            ))}
-        </Grid>
+        <StyledContainer>
+            <Stack flexDirection={"row"} justifyContent={"space-between"}>
+                <Typography variant="h1">Content Title Goes Here</Typography>
+                <StackRow sx={{ columnGap: "20px" }}>
+                    <StackRow sx={{ columnGap: "8px" }}>
+                        <img
+                            src={favIcon}
+                            height={24}
+                            width={24}
+                            alt="Filter favorites"
+                        />
+                        <Typography
+                            fontSize={16}
+                            fontWeight={500}
+                            lineHeight={"19px"}
+                        >
+                            0 ÜRÜN
+                        </Typography>
+                    </StackRow>
+                    <Button variant="contained" disableElevation>
+                        <Typography
+                            fontSize={16}
+                            fontWeight={500}
+                            lineHeight={"19px"}
+                        >
+                            Beğenilenler
+                        </Typography>
+                    </Button>
+                </StackRow>
+            </Stack>
+            <ProductCardGrid />
+        </StyledContainer>
     );
 };
 
