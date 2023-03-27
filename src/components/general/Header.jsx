@@ -5,6 +5,7 @@ import nttLogo from "@assets/ntt-logo.svg";
 import burgerIcon from "@assets/burger-menu-icon.svg";
 import SearchBar from "./SearchBar";
 import StackRow from "../layout/StackRow";
+import ResponsiveContainerHOC from "../layout/ResponsiveContainerHOC";
 import SearchButton from "./SearchButton";
 
 function Header() {
@@ -13,15 +14,8 @@ function Header() {
         <Box
             component="header"
             sx={{
-                [theme.breakpoints.up("mobile")]: {
-                    p: "25px 16px",
-                },
-                [theme.breakpoints.up("tablet")]: {
-                    p: "25px 32px",
-                },
-                [theme.breakpoints.up("desktop")]: {
-                    p: "25px 120px",
-                },
+                paddingTop: "25px",
+                paddingBottom: "25px"
             }}
         >
             <StackRow
@@ -86,4 +80,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default ResponsiveContainerHOC(Header);

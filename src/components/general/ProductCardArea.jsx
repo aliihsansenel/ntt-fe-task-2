@@ -4,6 +4,7 @@ import ProductCardGrid from "./ProductCardGrid";
 import { Box, Stack, Typography, Button, useTheme } from "@mui/material";
 
 import StackRow from "../layout/StackRow";
+import ResponsiveContainerHOC from "../layout/ResponsiveContainerHOC";
 import favIcon from "@assets/fav-black-icon.svg";
 import { styled } from "@mui/system";
 
@@ -12,13 +13,14 @@ const ProductCardArea = () => {
 
     const StyledContainer = styled(Box)({
         [breakpoints.only("mobile")]: {
-            margin: "48px 16px 16px",
+            marginTop: "48px",
         },
-        [breakpoints.only("tablet")]: {
-            margin: "48px 32px 32px",
+        [breakpoints.up("tablet")]: {
+            marginTop: "48px",
+            marginBottom: "32px"
         },
         [breakpoints.up("desktop")]: {
-            margin: "48px 120px 64px",
+            marginBottom: "64px"
         },
         "& .MuiTypography-h1": {
             fontWeight: 500,
@@ -64,4 +66,4 @@ const ProductCardArea = () => {
     );
 };
 
-export default ProductCardArea;
+export default ResponsiveContainerHOC(ProductCardArea);
