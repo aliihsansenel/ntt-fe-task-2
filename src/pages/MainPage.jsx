@@ -6,6 +6,7 @@ import MenuList from "@components/general/MenuList";
 import Carousel from "@components/general/Carousel";
 import StackRow from "@components/layout/StackRow";
 import ProductCardArea from "@components/general/ProductCardArea";
+import Footer from "@components/general/Footer";
 
 import { mainPageMenuData } from "../data";
 
@@ -20,6 +21,7 @@ function MainPage() {
                 <Carousel name={"carousel"} length={4} />
             </StackRow>
             <ProductCardArea />
+            <Footer />
         </>
     );
 }

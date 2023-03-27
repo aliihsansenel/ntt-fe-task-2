@@ -1,6 +1,6 @@
 import React from "react";
-
 import { Box, useTheme } from "@mui/material";
+
 import nttLogo from "@assets/ntt-logo.svg";
 import burgerIcon from "@assets/burger-menu-icon.svg";
 import SearchBar from "./SearchBar";
