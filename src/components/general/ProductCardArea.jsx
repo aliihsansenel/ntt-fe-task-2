@@ -11,15 +11,14 @@ const ProductCardArea = () => {
     const { breakpoints } = useTheme();
 
     const StyledContainer = styled(Box)({
-        maxWidth: 1200,
         [breakpoints.only("mobile")]: {
-            margin: "48px 16px 0",
+            margin: "48px 16px 16px",
         },
         [breakpoints.only("tablet")]: {
-            margin: "48px 32px 0",
+            margin: "48px 32px 32px",
         },
         [breakpoints.up("desktop")]: {
-            margin: "48px 120px 0",
+            margin: "48px 120px 64px",
         },
         "& .MuiTypography-h1": {
             fontWeight: 500,
@@ -31,7 +30,7 @@ const ProductCardArea = () => {
     });
     return (
         <StyledContainer>
-            <Stack flexDirection={"row"} justifyContent={"space-between"}>
+            <Stack flexDirection={"row"} justifyContent={"space-between"} marginBottom={'32px'}>
                 <Typography variant="h1">Content Title Goes Here</Typography>
                 <StackRow sx={{ columnGap: "20px" }}>
                     <StackRow sx={{ columnGap: "8px" }}>

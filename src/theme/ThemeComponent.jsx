@@ -19,6 +19,18 @@ const theme = createTheme({
             textTransform: "none",
         },
     },
+    components: {
+        MuiButton: {
+            variants: [
+                {
+                    props: { variant: "contained" },
+                    style: {
+                        backgroundColor: "#0059BC",
+                    },
+                },
+            ],
+        },
+    },
 });
 
 function ThemeComponent({ children }) {
