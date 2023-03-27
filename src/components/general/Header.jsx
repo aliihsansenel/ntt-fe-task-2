@@ -22,6 +22,7 @@ function Header() {
                 sx={{
                     flexWrap: "wrap",
                     columnGap: "13px",
+                    justifyContent: 'space-between',
                     "& .line-break": {
                         width: "100%",
                         [theme.breakpoints.up("tablet")]: {

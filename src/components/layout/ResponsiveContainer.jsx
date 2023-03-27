@@ -5,6 +5,7 @@ function ResponsiveContainer({ children }) {
     const { breakpoints } = useTheme();
 
     const ModifiedBox = styled(Box)({
+        maxWidth: 1440,
         [breakpoints.up("mobile")]: {
             marginLeft: "16px",
             marginRight: "16px",

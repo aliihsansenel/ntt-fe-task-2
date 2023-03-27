@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
+import ResponsiveContainerHOC from "../layout/ResponsiveContainerHOC";
 import "./style.scss";
 
 function ControlledCarousel({ name, length }) {
@@ -34,4 +35,4 @@ function ControlledCarousel({ name, length }) {
     );
 }
 
-export default ControlledCarousel;
+export default ResponsiveContainerHOC(ControlledCarousel);
