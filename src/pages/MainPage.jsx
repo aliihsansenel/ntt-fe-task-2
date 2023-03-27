@@ -16,9 +16,9 @@ function MainPage() {
             {/* <Container sx={{ justifyContent: 'center' }}>
                 <MenuList menuData={mainPageMenuData}/>
             </Container> */}
-            {/* <StackRow>
-                <Carousel />
-            </StackRow> */}
+            <StackRow>
+                <Carousel name={"carousel"} length={4} />
+            </StackRow>
             <ProductCardArea />
         </>
     );
