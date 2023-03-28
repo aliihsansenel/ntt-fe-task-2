@@ -5,6 +5,10 @@ import { styled } from "@mui/system";
 import NttLogo from "../icon/NttLogo";
 
 import nttMotto from "@assets/motto-logo.svg";
+import linkedinLogo from "@assets/linkedin-icon.svg";
+import fbLogo from "@assets/facebook-icon.svg";
+import instaLogo from "@assets/instagram-icon.svg";
+
 import StackRow from "../layout/StackRow";
 import { Divider } from "../layout";
 import ResponsiveContainer from "../layout/ResponsiveContainer";
@@ -24,7 +28,7 @@ const Footer = () => {
         "& .responsive-container:nth-of-type(1)": {
             alignItems: "stretch",
             columnGap: "10vw",
-            flex: '1 0 auto'
+            flex: "1 0 auto",
         },
         [breakpoints.only("mobile")]: {
             "& .responsive-container:nth-of-type(1)": {
@@ -44,7 +48,7 @@ const Footer = () => {
         },
         [breakpoints.up("desktop")]: {
             "& .responsive-container": {
-                width: '1440px'
+                width: "1440px",
             },
         },
         "& .responsive-container": {
@@ -60,9 +64,7 @@ const Footer = () => {
     });
     return (
         <StyledContainer>
-            <ResponsiveContainer
-                flexDirection={"row"}
-            >
+            <ResponsiveContainer flexDirection={"row"}>
                 <Stack justifyContent={"space-between"}>
                     <Stack rowGap={"7.5px"}>
                         <NttLogo fillColor={"#ffffff"} />
@@ -87,13 +89,24 @@ const Footer = () => {
                     flexDirection={"row"}
                     justifyContent="space-between"
                     flexGrow={1}
-                    sx={{p: '10px 0'}}
+                    sx={{ p: "10px 0" }}
                 >
                     <Typography component={"div"}>
                         contact@nttdata.com
                     </Typography>
                     <Typography component={"div"}>+3 9876 765 444</Typography>
-                    <Typography component={"div"}>Son</Typography>
+                    <Stack
+                        flexDirection={"row"}
+                        justifyContent="space-between"
+                        columnGap={"24px"}
+                        sx={{
+                            [breakpoints.only("mobile")]: { display: "none" },
+                        }}
+                    >
+                        <img height="24" src={linkedinLogo} alt="Linkedin Logo" />
+                        <img height="24" src={fbLogo} alt="Facebook Logo" />
+                        <img height="24" src={instaLogo} alt="Instagram Logo" />
+                    </Stack>
                 </Stack>
             </ResponsiveContainer>
         </StyledContainer>
