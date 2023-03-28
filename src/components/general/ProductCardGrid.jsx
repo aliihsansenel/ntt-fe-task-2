@@ -24,7 +24,7 @@ const ProductCardGrid = () => {
     };
 
     return (
-        <Grid container sx={{ gridGap: '12px'}}>
+        <Grid container spacing={'12px'}>
             {products.map((product) => (
                 <Grid item mobile={12} tablet={3} desktop={3} key={product.id} sx={{ '& .MuiCardMedia-root': { minHeight: minHeight } }}>
                     <ProductCard product={product} />
