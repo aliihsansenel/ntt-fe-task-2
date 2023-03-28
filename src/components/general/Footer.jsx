@@ -34,6 +34,9 @@ const Footer = () => {
             "& .responsive-container:nth-of-type(1)": {
                 marginTop: "48px",
                 marginBottom: "48px",
+                "& > .MuiStack-root": {
+                    maxWidth: '60%',
+                },
             },
             "& .MuiTypography-paragraph": {
                 display: "none",
@@ -44,6 +47,9 @@ const Footer = () => {
             "& .responsive-container:nth-of-type(1)": {
                 marginTop: "65px",
                 marginBottom: "65px",
+                "& > .MuiStack-root": {
+                    maxWidth: '50%',
+                },
             },
         },
         [breakpoints.up("desktop")]: {
@@ -53,6 +59,7 @@ const Footer = () => {
         },
         "& .responsive-container": {
             display: "flex",
+            justifyContent: "space-between"
         },
         "& .MuiTypography-h1": {
             fontWeight: 500,
