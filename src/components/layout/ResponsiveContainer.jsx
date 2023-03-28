@@ -18,6 +18,10 @@ function ResponsiveContainer({ children }) {
             marginLeft: "120px",
             marginRight: "120px",
         },
+        [breakpoints.up("xl")]: {
+            marginLeft: "auto",
+            marginRight: "auto",
+        },
     });
     return (
         <ModifiedBox className="responsive-container">{children}</ModifiedBox>

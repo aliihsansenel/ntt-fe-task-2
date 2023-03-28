@@ -12,6 +12,7 @@ const theme = createTheme({
             mobile: 0,
             tablet: 768,
             desktop: 1440,
+            xl: 1536,
         },
     },
     typography: {

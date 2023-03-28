@@ -8,6 +8,7 @@
 }
 
 .carousel.slide {
+    width: 100%;
     max-width: 1440px;
     [class^="carousel-control"] {
         display: none;
@@ -24,5 +25,9 @@
             height: 8px;
             border-radius: 50%;
         }
+    }
+    @media only screen and (min-width: 1440px) {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

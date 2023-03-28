@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, Stack, useTheme } from "@mui/material";
 
 import nttLogo from "@assets/ntt-logo.svg";
 import burgerIcon from "@assets/burger-menu-icon.svg";
@@ -21,12 +21,16 @@ function Header() {
             <StackRow
                 sx={{
                     flexWrap: "wrap",
-                    columnGap: "13px",
+                    columnGap: "20px",
+                    width: "100%",
                     justifyContent: 'space-between',
                     "& .line-break": {
                         width: "100%",
                         [theme.breakpoints.up("tablet")]: {
                             display: "none",
+                            "& + .s2": {
+                                maxWidth: '70%'
+                            }
                         },
                     },
                     "& .search-bar": {
@@ -74,8 +78,10 @@ function Header() {
                     <img height="24" src={burgerIcon} alt="Burger Menu Icon" />
                 </StackRow>
                 <div className="line-break" />
-                <SearchBar />
-                <SearchButton />
+                <Stack flexGrow={1} columnGap={'15px'} className="s2" flexDirection={'row-reverse'}>
+                    <SearchButton />
+                    <SearchBar />
+                </Stack>
             </StackRow>
         </Box>
     );

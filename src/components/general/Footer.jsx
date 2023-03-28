@@ -19,6 +19,13 @@ const Footer = () => {
         backgroundColor: "#0059BC",
         height: "258px",
         color: "white",
+        justifyContent: "flex-end",
+        flexWrap: "nowrap",
+        "& .responsive-container:nth-of-type(1)": {
+            alignItems: "stretch",
+            columnGap: "10vw",
+            flex: '1 0 auto'
+        },
         [breakpoints.only("mobile")]: {
             "& .responsive-container:nth-of-type(1)": {
                 marginTop: "48px",
@@ -35,13 +42,13 @@ const Footer = () => {
                 marginBottom: "65px",
             },
         },
-        [breakpoints.up("desktop")]: {},
+        [breakpoints.up("desktop")]: {
+            "& .responsive-container": {
+                width: '1440px'
+            },
+        },
         "& .responsive-container": {
             display: "flex",
-            "&:nth-of-type(1)": {
-                flexGrow: 1,
-                alignItems: "stretch",
-            },
         },
         "& .MuiTypography-h1": {
             fontWeight: 500,
@@ -53,35 +60,38 @@ const Footer = () => {
     });
     return (
         <StyledContainer>
-            <ResponsiveContainer>
-                <Stack
-                    flexDirection={"row"}
-                    columnGap={"10vw"}
-                    alignItems={"stretch"}
-                >
-                    <Stack justifyContent={"space-between"}>
-                        <Stack rowGap={"7.5px"}>
-                            <NttLogo fillColor={"#ffffff"} />
-                            <img
-                                height="10"
-                                width="136.2px"
-                                src={nttMotto}
-                                alt="Ntt Motto"
-                            />
-                            <Typography marginTop="24px" paragraph>
-                                Lorem ipsum dolor sit amet consectetur. Auctor
-                                tempor pretium aliquam neque.
-                            </Typography>
-                        </Stack>
-                        <EmailSearchBar />
+            <ResponsiveContainer
+                flexDirection={"row"}
+            >
+                <Stack justifyContent={"space-between"}>
+                    <Stack rowGap={"7.5px"}>
+                        <NttLogo fillColor={"#ffffff"} />
+                        <img
+                            height="10"
+                            width="136.2px"
+                            src={nttMotto}
+                            alt="Ntt Motto"
+                        />
+                        <Typography marginTop="24px" paragraph>
+                            Lorem ipsum dolor sit amet consectetur. Auctor
+                            tempor pretium aliquam neque.
+                        </Typography>
                     </Stack>
-                    <FooterLinks />
+                    <EmailSearchBar />
                 </Stack>
+                <FooterLinks />
             </ResponsiveContainer>
             <Divider />
             <ResponsiveContainer>
-                <Stack flexDirection={"row"} justifyContent="space-between" flexGrow={1}>
-                    <Typography component={"div"}>contact@nttdata.com</Typography>
+                <Stack
+                    flexDirection={"row"}
+                    justifyContent="space-between"
+                    flexGrow={1}
+                    sx={{p: '10px 0'}}
+                >
+                    <Typography component={"div"}>
+                        contact@nttdata.com
+                    </Typography>
                     <Typography component={"div"}>+3 9876 765 444</Typography>
                     <Typography component={"div"}>Son</Typography>
                 </Stack>
