@@ -3,53 +3,56 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-export default function MenuList({ menuData }) {
+import ResponsiveContainerHOC from "@components/layout/ResponsiveContainerHOC";
+import { Stack } from "@mui/material";
+
+import StackRow from "@components/layout/StackRow";
+import HeaderLinks from "./HeaderLinks";
+import MenuPopover from "./MenuPopover";
+
+function MenuList({ menuData }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [menuIdx, setMenuIdx] = React.useState(0);
 
     const handleClick = (event) => {
+        
         setAnchorEl(event.currentTarget);
         setMenuIdx(
-            new Number(event.currentTarget.id.split("menu-data-").at(-1))
+            Number(event.currentTarget.id.split("menu-data-").at(-1))
         );
     };
 
     const handleClose = () => {
         setAnchorEl(null);
     };
-    
-    const MenuDataMemo = /*React.memo(*/({ menuData }) => {
-        return Object.keys(menuData).map((key, idx) => {
-            <Button
-                key={key}
-                id={"menu-data-" + idx}
-                aria-describedby={"menu-data-" + idx}
-                variant="contained"
-                onClick={handleClick}
-            >
-                {key}
-            </Button>;
-        });
-    }/*)*/;
 
     const open = Boolean(anchorEl);
-    const id = open ? "simple-popover" : undefined;
 
     return (
-        <div>
-            <MenuDataMemo menuData={menuData} />
-            <Popover
-                id={id}
+        <Stack gap="20px" flexDirection={"row"} justifyContent="space-between">
+            {Object.keys(menuData).map((key, idx) => (
+                <Button
+                    key={key}
+                    id={`menu-data-${idx}`}
+                    aria-describedby={`menu-data-${idx}`}
+                    variant="text"
+                    onClick={handleClick}
+                >
+                    <Typography sx={{ color: '#6A6D70',fontSize: 16, fontWeight: 500}}>
+                        {key}
+
+                    </Typography>
+                </Button>
+            ))}
+            <MenuPopover
+                menuIdx={menuIdx}
                 open={open}
                 anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left",
-                }}
-            >
-                <Typography sx={{ p: 2 }}>{menuIdx}</Typography>
-            </Popover>
-        </div>
+                handleClose={handleClose}
+                contentComp={<HeaderLinks />}
+            />
+        </Stack>
     );
 }
+
+export default ResponsiveContainerHOC(MenuList)

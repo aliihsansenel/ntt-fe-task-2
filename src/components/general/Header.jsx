@@ -16,6 +16,9 @@ function Header() {
             sx={{
                 paddingTop: "25px",
                 paddingBottom: "25px",
+                [theme.breakpoints.up("desktop")]: {
+                    paddingBottom: "15px",
+                },
             }}
         >
             <StackRow
