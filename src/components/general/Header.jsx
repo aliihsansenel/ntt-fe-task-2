@@ -15,7 +15,7 @@ function Header() {
             component="header"
             sx={{
                 paddingTop: "25px",
-                paddingBottom: "25px"
+                paddingBottom: "25px",
             }}
         >
             <StackRow
@@ -23,14 +23,14 @@ function Header() {
                     flexWrap: "wrap",
                     columnGap: "20px",
                     width: "100%",
-                    justifyContent: 'space-between',
+                    justifyContent: "space-between",
                     "& .line-break": {
                         width: "100%",
                         [theme.breakpoints.up("tablet")]: {
                             display: "none",
                             "& + .s2": {
-                                maxWidth: '70%'
-                            }
+                                maxWidth: "70%",
+                            },
                         },
                     },
                     "& .search-bar": {
@@ -45,11 +45,19 @@ function Header() {
                             [theme.breakpoints.down("tablet")]: {
                                 display: "none",
                             },
+                        }
+                    },
+                    "& .search-icon": {
+                        [theme.breakpoints.up("tablet")]: {
+                            display: 'none',
                         },
-                        "&+ .search-icon": {
-                            [theme.breakpoints.down("tablet")]: {
-                                display: "none",
-                            },
+                    },
+                    "& .s2 > .search-icon": {
+                        [theme.breakpoints.up("tablet")]: {
+                            display: 'flex',
+                        },
+                        [theme.breakpoints.down("tablet")]: {
+                            display: "none",
                         },
                     },
                     rowGap: "12px",
@@ -78,7 +86,12 @@ function Header() {
                     <img height="24" src={burgerIcon} alt="Burger Menu Icon" />
                 </StackRow>
                 <div className="line-break" />
-                <Stack flexGrow={1} columnGap={'15px'} className="s2" flexDirection={'row-reverse'}>
+                <Stack
+                    flexGrow={1}
+                    columnGap={"15px"}
+                    className="s2"
+                    flexDirection={"row-reverse"}
+                >
                     <SearchButton />
                     <SearchBar />
                 </Stack>
