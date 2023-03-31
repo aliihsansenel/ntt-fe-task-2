@@ -25,7 +25,7 @@ function FooterLinks() {
     });
 
     return (
-        <StyledContainer>
+        <StyledContainer className="footer-links">
             {[1, 2, 3].map((title) => (
                 <Stack className="stack-1">
                     <Typography>Title {title}</Typography>

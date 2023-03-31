@@ -68,6 +68,12 @@ const Footer = () => {
         "& .MuiButton-contained": {
             padding: "4px 8px",
         },
+        [breakpoints.only("tablet")]: {
+            "& .footer-links": {
+                marginRight: '200px',
+            }
+        },
+        
     });
     return (
         <StyledContainer>
