@@ -22,7 +22,7 @@ function FooterLinks() {
                     <Typography noWrap>Header {header}</Typography>
                     <Stack className="stack-2">
                         {[1, 2, 3, 4, 5, 6, 7, 8].map((subheader) => (
-                            <Typography key={subheader}>
+                            <Typography noWrap key={subheader}>
                                 Header {subheader}
                             </Typography>
                         ))}

@@ -52,11 +52,7 @@ const Footer = () => {
                 },
             },
         },
-        [breakpoints.up("desktop")]: {
-            "& .responsive-container": {
-                width: "1440px",
-            },
-        },
+        
         "& .responsive-container": {
             display: "flex",
             justifyContent: "space-between"
