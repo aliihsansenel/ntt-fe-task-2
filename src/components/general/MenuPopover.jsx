@@ -18,13 +18,17 @@ function MenuList({ contentComp, anchorEl, open, handleClose, menuIdx }) {
             anchorEl={anchorEl}
             onClose={handleClose}
             anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-            }}
-            sx={{ maxWidth: "1200px" }}
+                vertical: 'bottom',
+                horizontal: 'center',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+              }}
+            sx={{  borderRadius: '1px' }}
         >
-            <StackRow height="300px">
-                {contentComp}
+            <StackRow sx={{ background: '#F4F5F6', p: '30px 48px', columnGap: '98px' }}>
+                {contentComp} 
                 <img src={"/img/menu-img.png"} alt="Menu image" />
             </StackRow>
         </Popover>

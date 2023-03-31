@@ -29,7 +29,7 @@ function MenuList({ menuData }) {
     const open = Boolean(anchorEl);
 
     return (
-        <Stack gap="35px" flexDirection={"row"} justifyContent="space-between" my={'25px'}>
+        <Stack gap="35px" flexDirection={"row"} justifyContent="space-between" m={'25px 0 12px'}>
             {Object.keys(menuData).map((key, idx) => (
                 <Button
                     key={key}
@@ -37,7 +37,7 @@ function MenuList({ menuData }) {
                     aria-describedby={`menu-data-${idx}`}
                     variant="text"
                     onClick={handleClick}
-                    sx={{ p:'0px'}}
+                    sx={{ p:'0px 0px 10px'}}
                 >
                     <Typography sx={{ color: '#6A6D70',fontSize: 16, fontWeight: 500}}>
                         {key}
@@ -51,6 +51,7 @@ function MenuList({ menuData }) {
                 anchorEl={anchorEl}
                 handleClose={handleClose}
                 contentComp={<HeaderLinks />}
+                
             />
         </Stack>
     );

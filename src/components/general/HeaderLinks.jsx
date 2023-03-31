@@ -8,30 +8,20 @@ function FooterLinks() {
     const StyledContainer = styled(Stack)({
         color: "black",
         alignSelf: "center",
-        "& .stack-1": { rowGap: "24px", fontWeight: 500, fontSize: 24 },
-        "& .stack-2": { rowGap: "12px", fontWeight: 400, fontSize: 20 },
-        // [breakpoints.only("mobile")]: {
-        //     display: "none",
-        // },
-        // [breakpoints.down("desktop")]: {
-        //     "& .stack-1": { rowGap: "12px" },
-        //     "& .stack-2": { display: "none" },
-        // },
-        [breakpoints.up("desktop")]: {
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "116px",
-        },
+        "& .stack-1": { rowGap: "12px", fontWeight: 500, fontSize: 14 },
+        "& .stack-2": { rowGap: "12px", fontWeight: 400, fontSize: 14 },
+        flexDirection: "row",
+        justifyContent: "space-between",
+        gap: "98px",
     });
 
     return (
         <StyledContainer>
-            // todo
-            {[1].map((header) => (
+            {[1, 2].map((header) => (
                 <Stack className="stack-1">
-                    <Typography>Header {header}</Typography>
+                    <Typography noWrap>Header {header}</Typography>
                     <Stack className="stack-2">
-                        {[1, 2, 3, 4].map((subheader) => (
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map((subheader) => (
                             <Typography key={subheader}>
                                 Header {subheader}
                             </Typography>

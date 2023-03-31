@@ -70,7 +70,7 @@ const Footer = () => {
         },
         [breakpoints.only("tablet")]: {
             "& .footer-links": {
-                marginRight: '200px',
+                marginRight: '100px',
             }
         },
         
