@@ -10,9 +10,11 @@
 .carousel.slide {
     width: 100%;
     max-width: 1440px;
+
     [class^="carousel-control"] {
         display: none;
     }
+
     .carousel-indicators {
         height: 58px;
         margin: 0;
@@ -20,14 +22,30 @@
         justify-content: flex-end;
         align-items: center;
         background: #00000066;
+
         button {
             width: 8px;
             height: 8px;
             border-radius: 50%;
         }
     }
+
     @media only screen and (min-width: 1440px) {
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+.hide-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        display: none;
     }
 }
