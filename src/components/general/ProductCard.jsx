@@ -10,14 +10,18 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 
 import favIcon from "@assets/favorite-icon.svg";
+import favIconRed from "@assets/favorite-icon-red.svg";
 
 import "./style.scss";
 
 import { tls } from "@srcRoot/utils/helper";
 
-function ProductCard({ product }) {
+function ProductCard({ product, favHandler, isLiked }) {
     const { id, name, description, imageUrl, price, shippingMethod } = product;
 
+    function clickHandler() {
+        favHandler(id)
+    }
     return (
         <Card
             sx={{
@@ -42,9 +46,9 @@ function ProductCard({ product }) {
                         sx={{ borderRadius: "50%" }}
                     >
                         <CardActions sx={{p:'0'}}>
-                            <Button size="small" color="primary" sx={{ minWidth: '24px', width: '24px', height: '24px', p: '0'}}>
+                            <Button size="small" color="primary" onClick={clickHandler} sx={{ minWidth: '24px', width: '24px', height: '24px', p: '0'}}>
                             <img
-                                src={favIcon}
+                                src={isLiked ? favIconRed : favIcon}
                                 height={16}
                                 alt="Add to favorites"
                                 />

@@ -20,10 +20,10 @@ function MainPage() {
                     background="#89919A"
                     sx={{ borderColor: "black", height: "1px" }}
                 />
-                <MenuList menuData={mainPageMenuData} />
+                {/* <MenuList menuData={mainPageMenuData} />
                 <StackRow>
                     <Carousel name={"carousel"} length={4} />
-                </StackRow>
+                </StackRow> */}
                 <ProductCardArea />
             </div>
 
