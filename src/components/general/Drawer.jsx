@@ -6,8 +6,7 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import { Typography } from "@mui/material";
 
 export default function TemporaryDrawer({ open, toggleDrawer }) {
     const list = () => (
@@ -18,24 +17,17 @@ export default function TemporaryDrawer({ open, toggleDrawer }) {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                {["Inbox", "Starred", "Send email", "Drafts"].map(
-                    (text, index) => (
-                        <ListItem key={text} disablePadding>
-                            asd
-                        </ListItem>
+                {[1, 2, 3, 4].map(
+                    (val, index) => (
+                        <ListItemButton>
+                            <ListItem key={val} disablePadding>
+                                <Typography fontWeight={500} fontSize={24}>Category {val}</Typography>
+                            </ListItem>
+                        </ListItemButton>
                     )
                 )}
             </List>
             <Divider />
-            <List>
-                {["All mail", "Trash", "Spam"].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
         </Box>
     );
 
