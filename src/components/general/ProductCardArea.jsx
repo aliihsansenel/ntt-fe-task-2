@@ -6,6 +6,7 @@ import { Box, Stack, Typography, Button, useTheme } from "@mui/material";
 import StackRow from "../layout/StackRow";
 import ResponsiveContainerHOC from "../layout/ResponsiveContainerHOC";
 import favIcon from "@assets/fav-black-icon.svg";
+import favIconFilled from "@assets/fav-black-icon-filled.svg";
 import { styled } from "@mui/system";
 
 import { createContext } from 'react';
@@ -53,7 +54,7 @@ const ProductCardArea = () => {
                 <StackRow sx={{ columnGap: "20px" }}>
                     <StackRow sx={{ columnGap: "8px" }}>
                         <img
-                            src={favIcon}
+                            src={isFilterOn ? favIconFilled : favIcon }
                             height={24}
                             width={24}
                             alt="Filter favorites"
@@ -63,7 +64,7 @@ const ProductCardArea = () => {
                             fontWeight={500}
                             lineHeight={"19px"}
                         >
-                            0 ÜRÜN
+                            {likedProductIds.length} ÜRÜN
                         </Typography>
                     </StackRow>
                     <Button
