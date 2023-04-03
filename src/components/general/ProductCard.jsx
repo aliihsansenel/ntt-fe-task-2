@@ -7,7 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 import favIcon from "@assets/favorite-icon.svg";
 import favIconRed from "@assets/favorite-icon-red.svg";
@@ -19,8 +19,12 @@ import { tls } from "@srcRoot/utils/helper";
 function ProductCard({ product, favHandler, isLiked }) {
     const { id, name, description, imageUrl, price, shippingMethod } = product;
 
-    function clickHandler() {
+    function favClickHandler() {
         favHandler(id)
+    }
+    function clickHandler(e) {
+        if (!e.target.closest('.MuiCardActions-root'))
+            window.open("https:/google.com", '_blank');
     }
     return (
         <Card
@@ -31,7 +35,7 @@ function ProductCard({ product, favHandler, isLiked }) {
                 boxShadow: "none",
             }}
         >
-            <CardActionArea>
+            <CardActionArea onClick={clickHandler}>
                 <Box position={"relative"}>
                     <CardMedia
                         sx={{ backgroundSize: "cover" }}
@@ -46,7 +50,7 @@ function ProductCard({ product, favHandler, isLiked }) {
                         sx={{ borderRadius: "50%" }}
                     >
                         <CardActions sx={{p:'0'}}>
-                            <Button size="small" color="primary" onClick={clickHandler} sx={{ minWidth: '24px', width: '24px', height: '24px', p: '0'}}>
+                            <Button size="small" color="primary" onClick={favClickHandler} sx={{ minWidth: '24px', width: '24px', height: '24px', p: '0'}}>
                             <img
                                 src={isLiked ? favIconRed : favIcon}
                                 height={16}
@@ -56,7 +60,6 @@ function ProductCard({ product, favHandler, isLiked }) {
                         </CardActions>
                     </Box>
                 </Box>
-
                 <CardContent sx={{ height: 200, p: 0 }}>
                     <Box sx={{ p: "4px 8px" }}>
                         <Typography
