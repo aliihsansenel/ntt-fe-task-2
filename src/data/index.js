@@ -1,3 +1,4 @@
 import { mainPageMenuData } from "./mainPageMenuData";
+import { categoryData } from "./categoryData";
 
-export { mainPageMenuData };
+export { mainPageMenuData, categoryData };

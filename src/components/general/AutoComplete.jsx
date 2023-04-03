@@ -1,6 +1,6 @@
-import { Autocomplete, Box, TextField } from '@mui/material';
+import { Autocomplete, Box, Popper, TextField } from '@mui/material';
 import React from 'react'
-
+import { styled } from "@mui/system";
 
 const StyledPopper = styled(Popper)(({ theme }) => ({
     border: `1px solid ${theme.palette.mode === 'light' ? '#e1e4e8' : '#30363d'}`,
@@ -10,13 +10,15 @@ const StyledPopper = styled(Popper)(({ theme }) => ({
     borderRadius: 6,
     width: 300,
     zIndex: theme.zIndex.modal,
-    fontSize: 13,
-    color: theme.palette.mode === 'light' ? '#24292e' : '#c9d1d9',
-    backgroundColor: theme.palette.mode === 'light' ? '#fff' : '#1c2128',
+    fontSize: 14,
+    "& .MuiPaper-root": {
+        color: "white",
+        backgroundColor: "#00254F"
+    }
 }));
 
 // TODO
-function AutoComplete({ onChange }) {
+function AutoComplete({ options, value, changeHandler }) {
   return (
       <Autocomplete
           sx={{
@@ -25,8 +27,12 @@ function AutoComplete({ onChange }) {
           }}
           className="category-select"
           disablePortal
-          options={[{value: "Category 1"}, {value: "Category 2"}]}
-          onChange={onChange}
+          options={options}
+          value={value}
+          getOptionLabel={o => o.value}
+          onChange={(event, newValue) => {
+            changeHandler(newValue);
+          }}
           renderInput={(params) => (
               <TextField {...params} sx={{ height: "40px" }} label="" />
           )}

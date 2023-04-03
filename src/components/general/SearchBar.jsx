@@ -3,8 +3,10 @@ import React from "react";
 import AutoComplete from "./AutoComplete";
 import SearchButton from "./SearchButton";
 
+import { categoryData } from "../../data";
+
 function SearchBar() {
-    const [category, setCategory] = React.useState("Categories");
+    const [category, setCategory] = React.useState(categoryData[0]);
 
     const handleChange = (event) => {
         setCategory(event.target.value);
@@ -43,7 +45,7 @@ function SearchBar() {
                 }}
                 // TODO borderColor
                 className="category-select"
-                value={category}
+                value={category.value}
                 onChange={handleChange}
                 renderValue={(value) => (value ? value : "Categories")}
             >
@@ -53,7 +55,7 @@ function SearchBar() {
                 <MenuItem value={"Category 3"}>Category 3</MenuItem>
             </Select>
             {/* TODO AutoComplete */}
-            {/* <AutoComplete onChange={handleChange} /> */}
+            {/* <AutoComplete options={categoryData} value={category} changeHandler={setCategory} /> */}
             <SearchButton />
         </Paper>
     );
