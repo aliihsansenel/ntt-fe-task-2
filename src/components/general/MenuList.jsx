@@ -33,6 +33,7 @@ function MenuList({ menuData }) {
             justifyContent="space-between"
             m={"25px 0 12px"}
             sx={{ flexWrap: "wrap" }}
+            className={"menu-list"}
         >
             {Object.keys(menuData).map((key, idx) => (
                 <Button

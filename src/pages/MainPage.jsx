@@ -12,29 +12,46 @@ import Footer from "@components/general/Footer";
 import useDrawer from "@hooks/useDrawer";
 
 import { mainPageMenuData } from "../data";
-import { Divider, Stack } from "@mui/material";
+import { Divider, Stack, useTheme } from "@mui/material";
+import { styled } from "@mui/system";
 
 
 function MainPage() {
     const [ drawerState, toggleDrawer ] = useDrawer();
+    const { breakpoints } = useTheme();
+
+    const Container = styled(Stack)({
+        "& .menu-list": {
+            [breakpoints.only("mobile")]: {
+                display: 'none'
+            }
+        }
+    });
 
     return (
         <>
-            <Stack justifyContent={"space-between"}>
+            <Container justifyContent={"space-between"}>
                 <div>
                     <Header toggleDrawer={toggleDrawer} />
                     <Divider
                         background="#89919A"
                         sx={{ borderColor: "black", height: "1px" }}
                     />
-                    <MenuList menuData={mainPageMenuData} />
+                    <MenuList
+                        menuData={mainPageMenuData}
+                        sx={{
+                            [breakpoints.only("mobile")]: {
+                                display: "none",
+                            }
+                        }}
+                    />
                     <StackRow>
                         <Carousel name={"carousel"} length={4} />
                     </StackRow>
                     <ProductCardArea />
                 </div>
                 <Footer />
-            </Stack>
+            </Container>
             <Drawer open={drawerState} toggleDrawer={toggleDrawer} />
         </>
     );
