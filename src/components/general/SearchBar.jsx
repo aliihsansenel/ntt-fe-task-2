@@ -1,5 +1,6 @@
 import { InputBase, MenuItem, Paper, Select } from "@mui/material";
 import React from "react";
+import AutoComplete from "./AutoComplete";
 import SearchButton from "./SearchButton";
 
 function SearchBar() {
@@ -51,6 +52,8 @@ function SearchBar() {
                 <MenuItem value={"Category 3"}>Category 3</MenuItem>
                 <MenuItem value={"Category 3"}>Category 3</MenuItem>
             </Select>
+            {/* TODO AutoComplete */}
+            {/* <AutoComplete onChange={handleChange} /> */}
             <SearchButton />
         </Paper>
     );
