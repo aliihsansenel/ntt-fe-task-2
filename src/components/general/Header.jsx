@@ -8,7 +8,7 @@ import StackRow from "../layout/StackRow";
 import ResponsiveContainerHOC from "../layout/ResponsiveContainerHOC";
 import SearchButton from "./SearchButton";
 
-function Header() {
+function Header({ toggleDrawer }) {
     const theme = useTheme();
     return (
         <Box
@@ -86,7 +86,7 @@ function Header() {
                     }}
                 >
                     <img height="24" src={nttLogo} alt="Ntt Logo" />
-                    <img height="24" src={burgerIcon} alt="Burger Menu Icon" />
+                    <img height="24" src={burgerIcon} alt="Burger Menu Icon" onClick={toggleDrawer(true)}/>
                 </StackRow>
                 <div className="line-break" />
                 <Stack

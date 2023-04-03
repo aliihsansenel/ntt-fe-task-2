@@ -9,7 +9,8 @@ export default defineConfig({
             '@srcRoot': '/src',
             '@assets': '/src/assets',
             '@components': '/src/components',
-            '@features': '/src/features'
+            '@features': '/src/features',
+            '@hooks': '/src/hooks'
         }
     }
 })
